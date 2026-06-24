@@ -1,0 +1,141 @@
+/* Reset basic layout styles */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Center the component vertically and horizontally on the page */
+.signin-container {
+  background-color: var(bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Card layout wrapper */
+.signin-card {
+  background-color: #ffffff;
+  padding: 2.5rem 4rem;
+  border-radius: 1.33rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  max-width: 420px;
+}
+
+/* Typography styles */
+h2 {
+  color: #111827;
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  color: #6b7280;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+/* Form block layouts */
+.signin-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+}
+
+.label-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+label {
+  color:  var(--dark-blue);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+/* Form interaction styling */
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 1rem;
+  color: #1f2937;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus {
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+}
+
+/* Inline choice row alignment */
+.remember-me {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.remember-me input[type="checkbox"] {
+  width: 1rem;
+  height: 1rem;
+  accent-color: #4f46e5;
+  cursor: pointer;
+}
+
+.remember-me label {
+  color: #4b5563;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+/* Dynamic button design and microinteractions */
+.submit-btn {
+  background-color: #4f46e5;
+  color: #ffffff;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-top: 0.5rem;
+}
+
+.submit-btn:hover {
+  background-color: #4338ca;
+}
+
+/* External links configuration */
+.forgot-link, 
+.signup-link {
+  color: #4f46e5;
+  font-size: 0.875rem;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.forgot-link:hover, 
+.signup-link:hover {
+  text-decoration: underline;
+}
+
+.signup-prompt {
+  color: #6b7280;
+  font-size: 0.875rem;
+  text-align: center;
+  margin-top: 2rem;
+}

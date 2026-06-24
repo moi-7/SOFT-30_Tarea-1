@@ -42,18 +42,18 @@ h6 {
   overflow-wrap: break-word;
 }
 
-p {
+/* p {
   text-wrap: pretty;
-}
+} */
 
-h1,
+/* h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
   text-wrap: balance;
-}
+} */
 
 ul[role='list'],
 ol[role='list'] {
