@@ -1,0 +1,81 @@
+:root {
+  --bg: #ffffff;
+  --shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+  --btn-radius: 100vmax;
+
+  /* Variables para el tamaño de fuente */
+
+}
+
+
+html,
+body {
+  height: 100%;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  line-height: 1.5;
+  background-color: var(--bg);
+}
+
+
+/* =========================================
+             Grid base structure
+============================================*/
+.wrapper {
+  display: grid;
+
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+}
+
+.header {
+  grid-area: header;
+}
+
+.content {
+  grid-area: main;
+}
+
+.footer {
+  grid-area: footer;
+}
+
+/* =========================================
+            media queries
+============================================*/
+@media (pointer: fine) and (hover: hover) {
+  .btn{
+    cursor: pointer;
+  }
+}
+
+@media (pointer: coarse) and (hover: none) {
+  .btn {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
