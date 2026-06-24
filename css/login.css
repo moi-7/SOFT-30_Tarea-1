@@ -1,20 +1,67 @@
-/* Reset basic layout styles */
+/* ==========================================
+   1. GLOBAL RESET & TOKENS
+   ========================================== */
+:root {
+  --color-primary: #4f46e5;
+  --color-primary-hover: #4338ca;
+  --color-text-dark: #111827;
+  --color-text-muted: #6b7280;
+  --color-text-body: #1f2937;
+  --color-text-label: #4b5563;
+  --color-border: #d1d5db;
+  --color-bg-main: #f9fafb;
+  /* Replaced invalid var(bg) */
+}
+
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Center the component vertically and horizontally on the page */
-.signin-container {
-  background-color: var(bg);
+/* ==========================================
+   2. REPEATING FLEXBOX GLOBAL SELECTIONS
+   ========================================== */
+
+
+.signin-container,
+.signin-form,
+.input-group,
+.label-wrapper,
+.remember-me {
   display: flex;
-  justify-content: center;
+}
+
+.signin-form,
+.input-group {
+  flex-direction: column;
+}
+
+.signin-container,
+.label-wrapper,
+.remember-me {
   align-items: center;
+}
+
+.label-wrapper {
+  justify-content: space-between;
+}
+
+.signin-container {
+  justify-content: center;
+}
+
+/* ==========================================
+   3. COMPONENT UNIQUE DECLARATIONS
+   ========================================== */
+
+
+.signin-container {
+  background-color: var(--color-bg-main);
   min-height: 100vh;
 }
 
-/* Card layout wrapper */
 .signin-card {
   background-color: #ffffff;
   padding: 2.5rem 4rem;
@@ -24,86 +71,78 @@
   max-width: 420px;
 }
 
-/* Typography styles */
+
+.signin-form {
+  gap: 1.25rem;
+}
+
+.input-group {
+  row-gap: 0.5rem;
+}
+
+.remember-me {
+  gap: 0.5rem;
+}
+
+
 h2 {
-  color: #111827;
+  color: var(--color-text-dark);
   font-size: 1.75rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
 }
 
+.subtitle,
+.signup-prompt {
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+}
+
 .subtitle {
-  color: #6b7280;
   font-size: 0.95rem;
   margin-bottom: 1rem;
 }
 
-/* Form block layouts */
-.signin-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-}
-
-.input-group {
-  display: flex;
-  flex-direction: column;
-  row-gap: 0.5rem;
-}
-
-.label-wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
 label {
-  color:  var(--dark-blue);
+  color: var(--color-text-label);
   font-size: 0.875rem;
   font-weight: 600;
 }
 
-/* Form interaction styling */
+
 input[type="email"],
 input[type="password"] {
   width: 100%;
   padding: 0.75rem 1rem;
-  border: 1px solid #d1d5db;
+  border: 1px solid var(--color-border);
   border-radius: 6px;
   font-size: 1rem;
-  color: #1f2937;
+  color: var(--color-text-body);
   outline: none;
   transition: border-color 0.2s, box-shadow 0.2s;
 }
 
 input:focus {
-  border-color: #4f46e5;
+  border-color: var(--color-primary);
   box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
-}
-
-/* Inline choice row alignment */
-.remember-me {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
 }
 
 .remember-me input[type="checkbox"] {
   width: 1rem;
   height: 1rem;
-  accent-color: #4f46e5;
+  accent-color: var(--color-primary);
   cursor: pointer;
 }
 
 .remember-me label {
-  color: #4b5563;
+  color: var(--color-text-label);
   font-weight: 400;
   cursor: pointer;
 }
 
-/* Dynamic button design and microinteractions */
+
 .submit-btn {
-  background-color: #4f46e5;
+  background-color: var(--color-primary);
   color: #ffffff;
   padding: 0.75rem;
   border: none;
@@ -116,26 +155,23 @@ input:focus {
 }
 
 .submit-btn:hover {
-  background-color: #4338ca;
+  background-color: var(--color-primary-hover);
 }
 
-/* External links configuration */
-.forgot-link, 
+.forgot-link,
 .signup-link {
-  color: #4f46e5;
+  color: var(--color-primary);
   font-size: 0.875rem;
   text-decoration: none;
   font-weight: 500;
 }
 
-.forgot-link:hover, 
+.forgot-link:hover,
 .signup-link:hover {
   text-decoration: underline;
 }
 
 .signup-prompt {
-  color: #6b7280;
-  font-size: 0.875rem;
   text-align: center;
   margin-top: 2rem;
 }
