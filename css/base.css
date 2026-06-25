@@ -27,32 +27,6 @@ body {
 }
 
 
-/* =========================================
-             Grid base structure
-============================================*/
-.wrapper {
-  display: grid;
-
-  grid-template-areas:
-    "header"
-    "main"
-    "footer";
-
-  grid-template-columns: 1fr;
-  grid-template-rows: auto 1fr auto;
-}
-
-.header {
-  grid-area: header;
-}
-
-.content {
-  grid-area: main;
-}
-
-.footer {
-  grid-area: footer;
-}
 
 /* =========================================
             media queries
