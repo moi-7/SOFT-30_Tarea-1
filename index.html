@@ -18,8 +18,8 @@
 
             <form class="signin-form">
                 <div class="input-group">
-                    <label for="email">Correo electrónico o nombre de usuario</label>
-                    <input type="email" id="email" placeholder="Ingresa tu correo o usuario" required>
+                    <label for="text">Correo electrónico o nombre de usuario</label>
+                    <input type="text" id="email" placeholder="Ingresa tu correo o usuario" required>
                 </div>
 
                 <div class="input-group">
@@ -27,11 +27,11 @@
                         <label for="password">Contraseña</label>
                         <a href="#" class="forgot-link">¿Olvidaste tu contraseña?</a>
                     </div>
-                    <input type="password" id="password" placeholder="••••••••" required>
+                    <input type="password" id="password" placeholder="Ingresa tu contraseña" required>
                 </div>
 
                 <div class="remember-me">
-                    <input type="checkbox" id="remember">
+                    <input type="checkbox" id="remember" role="checkbox">
                     <label for="remember">Mantener mi sesión iniciada</label>
                 </div>
 
@@ -44,6 +44,7 @@
         </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="js/index.js"></script>
 </body>
 
