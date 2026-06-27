@@ -1,2 +1,10 @@
 // Guard clause: Bloquea accesso al dashboard si NO está en sessionStorage Y TAMPOCO está en localStorage
-sessionStorage.getItem(`isLoggedIn`)!==`true`&&localStorage.getItem(`isLoggedIn`)!==`true`&&window.location.replace(`index.html`);
+export function checkAuth() {
+    const isLoggedIn =
+        sessionStorage.getItem("isLoggedIn") === "true" ||
+        localStorage.getItem("isLoggedIn") === "true";
+
+    if (!isLoggedIn) {
+        window.location.replace("index.html");
+    }
+}
