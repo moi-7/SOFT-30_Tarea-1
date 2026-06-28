@@ -1,8 +1,4 @@
-function createElement(tag, className) {
-    const element = document.createElement(tag);
-    element.className = className;
-    return element;
-}
+import { createElement } from "../utils/createElement.js";
 
 export function renderDashboard() {
     const main = document.querySelector(".main");
@@ -13,7 +9,7 @@ export function renderDashboard() {
 
 
     banner.innerHTML = `
-        <img src="assets/images/2d.png" alt="">
+        <img src="assets/images/banner.png" alt="Image with items from a supermarket">
     `;
 
     toolbar.innerHTML = `
