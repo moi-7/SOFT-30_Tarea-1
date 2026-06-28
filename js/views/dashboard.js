@@ -1,27 +1,41 @@
-export function renderDashboard() {
+function createElement(tag, className) {
+    const element = document.createElement(tag);
+    element.className = className;
+    return element;
+}
 
-    const banner = document.querySelector(".banner");
-    const toolbar = document.querySelector(".toolbar");
-    const table = document.querySelector(".table");
+export function renderDashboard() {
+    const main = document.querySelector(".main");
+
+    const banner = createElement("div", "banner");
+    const toolbar = createElement("div", "toolbar");
+    const table = createElement("div", "table");
+
 
     banner.innerHTML = `
         <img src="assets/images/2d.png" alt="">
     `;
 
     toolbar.innerHTML = `
-      <div class="input-group">
-        <label for="search" hidden>Ingresa el producto a buscar</label>
-        <input type="search" id="search" placeholder="Buscar Productos">
-      </div>
+
+            <label for="search" hidden>Ingresa el producto a buscar</label>
+            <input type="search" id="search" placeholder="Buscar Productos">
+
+            <div class="toolbar-actions">
+                <label for="file" hidden>Importar lista</label>
+                <input type="file" id="file" placeholder="Importar lista">
+                <button>Agregar Producto</button>
+            </div>
     `;
 
     table.innerHTML = `
         <section class="inventory-table">
-    <h2>Product Inventory</h2>
+    <h2>Lista de productos</h2>
 
     <table class="table-cells">
         <thead>
             <tr>
+                <th scope="col">ID</th>
                 <th scope="col">Nombre</th>
                 <th scope="col">Categoría</th>
                 <th scope="col">Marca</th>
@@ -36,6 +50,22 @@ export function renderDashboard() {
 
         <tbody id="inventory-body">
           <tr>
+            <td>0</td>
+            <td>Arroz</td>
+            <td>Granos</td>
+            <td>Tío pelón</td>
+            <td>2</td>
+            <td>kg</td>
+            <td>₡1 250</td>
+            <td>0%</td>
+            <td>₡2 825</td>
+            <td>
+              <button class="btn-edit" aria-label="Editar">✏️</button>
+              <button class="btn-delete" aria-label="Eliminar">🗑️</button>
+            </td>
+          </tr>
+          <tr>
+            <td>1</td>
             <td>Arroz</td>
             <td>Granos</td>
             <td>Tío pelón</td>
@@ -61,5 +91,7 @@ export function renderDashboard() {
     </table>
 </section>
     `;
+
+    main.append(banner, toolbar, table);
 }
 

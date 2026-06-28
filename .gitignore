@@ -6,3 +6,6 @@
 
 # docs folder
 *assets/docs
+
+# Ignore .venv directory
+.venv
