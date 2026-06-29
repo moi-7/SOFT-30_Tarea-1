@@ -9,7 +9,7 @@
     "sidebar header"
     "sidebar main";
 
-  grid-template-columns: 200px 1fr;
+  grid-template-columns: 80px 1fr;
   grid-template-rows: 80px 1fr;
 }
 
@@ -19,6 +19,33 @@
   width: 100%;
   height: 80px;
 }
+
+.navbar{
+  padding-inline: 1rem;
+}
+
+.navbar,
+.navbar-brand{
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.navlinks {
+  margin-left: auto;
+
+  & .user-profile-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--dark-blue);
+    outline: 1px solid white;
+    margin-left: auto;
+  }
+}
+
+
 
 .sidebar {
   grid-area: sidebar;
@@ -72,7 +99,6 @@
   grid-area: table;
   background-color: var(--bg);
   width: 100%;
-  outline: 1px solid red;
   height: calc(100vh - 270px);
   border-radius: 0.18rem;
 }
@@ -98,6 +124,115 @@
 
 input[type="search"]{
   flex-grow: 1;
+}
+
+
+/* =========================================
+           Modal agregar producto
+==========================================*/
+#myModal {
+    width: clamp(280px, 85vw, 600px);
+    max-width: 100%;
+    padding: 2rem;
+    background-color: #f3f4f6;
+}
+
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(2px);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+#closeModal {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+
+.modal-form{
+    display:flex;
+    flex-direction:column;
+    gap:2rem;
+}
+
+.modal-section{
+    display:flex;
+    flex-direction:column;
+    gap:1rem;
+}
+
+.field-row{
+    display:flex;
+    gap:1rem;
+}
+
+.field-row > *{
+    flex:1;
+}
+
+.inventory-row{
+    display:flex;
+    gap:1rem;
+}
+
+.inventory-row > *{
+    flex:1;
+}
+
+
+.modal-footer{
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    gap:1rem;
+}
+
+@media (min-width: 601px) {
+
+  .inventario-inputs {
+
+    flex-wrap: nowrap;
+
+    & input {
+      width: 33.33%;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+    .field-row,
+    .inventory-row {
+        flex-direction: column;
+    }
+}
+
+/* =========================================
+        Mobile Grid base structure
+==========================================*/
+@media (max-width: 600px) {
+  .wrapper {
+    grid-template-areas:
+      "header"
+      "main"
+      "sidebar";
+
+    grid-template-columns: 1fr;
+    grid-template-rows: 80px 1fr 80px;
+  }
+
+  .main{
+    padding-inline: 0;
+  }
 }
 
 
